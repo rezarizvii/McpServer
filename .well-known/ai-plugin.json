@@ -1,0 +1,59 @@
+{
+    "name": "FunctionPoint MCP Server",
+    "description": "This MCP server has various tools that correspond to different FunctionPoint REST API endpoints.",
+    "version": "1.0.0",
+    "tools": [
+        {
+            "name": "estimates",
+            "description": "Fetches estimates from FunctionPoint with optional filters.",
+            "endpoint": "/tools/get-estimates",
+            "method": "POST",
+            "parameters": [
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "required": false,
+                    "description": "Page number to start fetching from (default 1)."
+                },
+                {
+                    "name": "itemsPerPage",
+                    "type": "integer",
+                    "required": false,
+                    "description": "Number of items per page (default 30)."
+                },
+                {
+                    "name": "filters",
+                    "type": "object",
+                    "required": false,
+                    "description": "Dictionary of key-value filters to apply when fetching estimates."
+                }
+            ]
+        },
+        {
+            "name": "dockets",
+            "description": "Fetches dockets (jobs) from FunctionPoint with optional filters.",
+            "endpoint": "/tools/get-dockets",
+            "method": "POST",
+            "parameters": [
+                {
+                    "name": "page",
+                    "type": "integer",
+                    "required": false,
+                    "description": "Page number to start fetching from (default 1)."
+                },
+                {
+                    "name": "itemsPerPage",
+                    "type": "integer",
+                    "required": false,
+                    "description": "Number of items per page (default 30)."
+                },
+                {
+                    "name": "filters",
+                    "type": "object",
+                    "required": false,
+                    "description": "Dictionary of key-value filters to apply when fetching dockets."
+                }
+            ]
+        }
+    ]
+}

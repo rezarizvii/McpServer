@@ -13,11 +13,15 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
+var provider = new FileExtensionContentTypeProvider();
+provider.Mappings[".json"] = "application/json";
+
 app.UseStaticFiles(new StaticFileOptions
 {
     FileProvider = new PhysicalFileProvider(
         Path.Combine(builder.Environment.ContentRootPath, ".well-known")),
-    RequestPath = "/.well-known"
+    RequestPath = "/.well-known",
+    ContentTypeProvider = provider
 });
 
 app.MapEstimatesEndpoints();

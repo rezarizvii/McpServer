@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class EstimateQuery
+public class FilterQuery
 {
     // Common paging/sorting
     public int? page { get; set; }
